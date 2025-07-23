@@ -1,0 +1,12 @@
+body {
+  margin-top: 0;
+  background: #f6f6f6;
+}
+
+.div-return {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

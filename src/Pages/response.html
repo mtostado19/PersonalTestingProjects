@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,50 @@
   <link rel="stylesheet" href="../css/buttons.css">
   <title>Correcto</title>
 </head>
+
 <body>
   <div class="div-return">
     <button id="btn-return" class="btn-main"> Regresar </button>
   </div>
 
   <script src="../javascript/finalPage.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <script>
+// do this for 30 seconds
+var duration = 2 * 1000;
+var end = Date.now() + duration;
+
+(function frame() {
+  // launch a few confetti from the left edge
+  confetti({
+    particleCount: 7,
+    angle: 60,
+    spread: 100,
+    origin: { x: 0, }
+  });
+  // and launch a few from the right edge
+  confetti({
+    particleCount: 7,
+    angle: 120,
+    spread: 100,
+    origin: { x: 1 }
+  });
+  confetti({
+    particleCount: 7,
+    spread: 200,
+    angle: 270,
+    origin: { y: 0 }
+  })
+
+  // keep going until we are out of time
+  if (Date.now() < end) {
+    requestAnimationFrame(frame);
+  }
+}());
+  </script>
+
 
 </body>
+
 </html>

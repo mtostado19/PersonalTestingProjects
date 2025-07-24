@@ -11,6 +11,9 @@
 
 <body>
   <div class="div-return">
+    <div class="div-texto-final">
+      <p>Yo maaaaach!!</p>
+    </div>
     <button id="btn-return" class="btn-main"> Regresar </button>
   </div>
 
@@ -19,8 +22,15 @@
 
   <script>
 // do this for 30 seconds
-var duration = 2 * 1000;
-var end = Date.now() + duration;
+const duration = 2 * 1000;
+const end = Date.now() + duration;
+const scalar = 2;
+const hearts = confetti.shapeFromText({ text: '🩷' })
+
+confetti({
+  shapes: [hearts],
+  scalar
+});
 
 (function frame() {
   // launch a few confetti from the left edge
@@ -38,7 +48,9 @@ var end = Date.now() + duration;
     origin: { x: 1 }
   });
   confetti({
-    particleCount: 7,
+    shapes: [hearts],
+    scalar,
+    particleCount: 1,
     spread: 200,
     angle: 270,
     origin: { y: 0 }
